@@ -24,12 +24,30 @@ Hostname> enable
 Hostname#show version
 Hostname#sh ip
 Hostname#config terminial  press option (A)
+
+
+WAN INTERFACE:
+
+Hostname(Config)# init g0/0
+Hostname(Config -if)# ip address  192.168.29.123 255.255.255.0
+Hostname(Config -if)#  nameif outside
+Hostname(Config -if)# no shutdown
+Hostname(Config -if)# exit
+Hostname(Config)# sh ip 
+
+LAN INTERFACE:
+
 Hostname(Config)# init g0/1
 Hostname(Config -if)# ip address  192.168.29.123 255.255.255.0
 Hostname(Config -if)#  nameif inside
 Hostname(Config -if)# no shutdown
 Hostname(Config -if)# exit
 Hostname(Config)# sh ip 
+
+
+
+
+
 Hostname(Config)# 
 Hostname(Config)# 
 
@@ -46,6 +64,7 @@ Hostname(Config)# write memory
 
 
 Hostname(Config)sh run
+
 
 
 
