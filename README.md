@@ -46,3 +46,45 @@ Hostname(Config)# write memory
 
 
 Hostname(Config)sh run
+
+
+
+#How to configure ssh on asav:
+
+Configure SSH Access in Cisco ASA
+
+Step 1: Configure Enable password. (Optional)
+
+ASA(config)# enable password cisco
+
+Step 2: Create a username with password.
+
+ASA(config)# username test password test
+
+Step 3: Configure this local username to authenticate with SSH.
+
+ASA(config)# aaa authentication ssh console LOCAL
+
+Step 4: Create RSA key pair.
+
+ASA(config)# crypto key generate rsa modulus 1024
+INFO: The name for the keys will be: 
+Keypair generation process begin. Please wait...
+
+Step 5: Now specify only particular hosts or network to connect to the device using SSH.
+
+ASA(config)# ssh 192.168.1.0 255.255.255.0 trust
+ASA(config)# ssh 172.16.1.0 255.255.255.0 trust
+
+ssh 10.10.10.0 255.255.255.0 inside
+
+ssh 70.75.74.0 255.255.255.0 outside
+
+
+You can now access the device using SSH from 192.168.1.0 and 172.16.1.0 network.
+
+In this way you can configure remote SSH access in Cisco ASA appliance.
+
+ssh 10.10.10.0 255.255.255.0 inside
+
+ssh 70.75.74.0 255.255.255.0 outside
