@@ -11,6 +11,8 @@ Download the Files from the link provided.
 
 and import it them to Esxi 6.7 and after the import it needs few configurations.
 
+URL for references for issues: https://community.cisco.com/t5/firewalls/where-to-download-asdm-idm-launcher/td-p/3398310
+
 
 
 
